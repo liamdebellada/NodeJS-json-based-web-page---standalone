@@ -1,0 +1,36 @@
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../page.css">
+
+<script>
+    var jsonitems = '<%- JSON.stringify(items) %>'
+    var items = $.parseJSON(jsonitems)
+</script>
+
+
+<html>
+    <% items.nodepage.forEach(function(item){ %>
+        <head>
+            <div style="text-align: center;">
+                <h1 class="name_title" id="comp"></h1>
+                <a class="text-decoration-none" href="/"><h1 class="node_text" id="node"></h1></a>
+            </div>
+        </head>
+        <script>
+            var name = '<%=item.name %>'
+            var n = name.split(" ");
+
+            var end = n[n.length - 1];
+            var complete = name.replace(end, "");
+
+            document.getElementById("comp").innerHTML = complete;
+            document.getElementById("node").innerHTML = end;
+        </script>
+    <% }) %>
+    <body class="p-3 mb-2 bg-dark text-white">
+        <h1 style="text-align: center; font-weight: 200; padding-top: 20%; padding-bottom: 18%;"><a href = "https://nodejs.org/"style="color:#43853d;">NodeJS</a> is a javascript framework used to host various services such as: Online shopping or banking, which require a stable backend.</h1>
+    </body>
+</html>
