@@ -61,3 +61,10 @@ a {
 p {
     font-family: 'Montserrat', sans-serif;  
 }
+
+.content-div-custom {
+    border: 1px solid rgba(255, 255, 255, 0.233); 
+    border-radius: 3px; 
+    max-width: 75%; 
+    margin: auto;
+}
